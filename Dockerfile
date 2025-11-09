@@ -6,7 +6,7 @@ RUN R -e "install.packages(c('shiny', 'shinythemes', 'randomForest', 'dplyr'), r
 
 # Copier l'app et le modèle dans le conteneur
 COPY app.R /srv/shiny-server/app.R
-COPY rf_model_test3_local.rds /srv/shiny-server/rf_model_test3_local.rds
+#COPY rf_model_test3_local.rds /srv/shiny-server/rf_model_test3_local.rds
 
 # Donner les bons droits
 RUN chown -R shiny:shiny /srv/shiny-server
