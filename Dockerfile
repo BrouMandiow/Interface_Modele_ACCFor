@@ -4,9 +4,8 @@ FROM rocker/shiny:latest
 # Installer les packages nécessaires
 RUN R -e "install.packages(c('shiny', 'shinythemes', 'randomForest', 'dplyr'), repos='https://cloud.r-project.org')"
 
-# Copier l'app et le modèle dans le conteneur
+# Copier uniquement l'application
 COPY app.R /srv/shiny-server/app.R
-#COPY rf_model_test3_local.rds /srv/shiny-server/rf_model_test3_local.rds
 
 # Donner les bons droits
 RUN chown -R shiny:shiny /srv/shiny-server
